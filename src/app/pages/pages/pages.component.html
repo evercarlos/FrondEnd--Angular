@@ -1,0 +1,28 @@
+
+<div id="main-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="page-wrapper">
+       <div class="container-fluid">
+         <app-breadcrumbs></app-breadcrumbs>
+         <div class="row">
+           <div class="col-12">
+                 <div class="card">
+                     <div class="card-body">
+                         <router-outlet></router-outlet> <!--para qu redireccione a la paágina, en este caso tiene estilos-->
+                     </div>
+                 </div>
+           </div>
+         </div>
+         <app-rightsidebar></app-rightsidebar>
+       </div>
+        <!-- footer -->
+           <!-- ============================================================== -->
+           <footer class="footer">
+             © 2020 tecosfec
+         </footer>
+         <!-- ============================================================== -->
+         <!-- End footer -->
+         <!-- ============================================================== -->
+    </div>
+ </div>
