@@ -7,8 +7,8 @@ import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
 
 
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+/*import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';*/
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 /* import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';

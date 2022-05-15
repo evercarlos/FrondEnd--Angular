@@ -1,1 +1,58 @@
-<p>progress works!</p>
+<div class="row">
+    <div class="col-12">
+          <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Striped Progress bar {{progreso1}}</h4>
+                <div class="progress m-t-20">
+                    <!-- [style.width]="progress+'%'"-->
+                    <div
+                      class="progress-bar bg-primary progress-bar-striped active"
+                      style="height:10px;"
+                      role="progressbar"
+                      [style.width]="getProgreso1"
+                      >
+                      <!--[style.width]="getPorcentage"-->
+                    </div>
+                </div>
+
+                <div class="progress m-t-20">
+                  <!-- [style.width]="progress+'%'"-->
+                  <div
+                    class="progress-bar bg-info progress-bar-striped active"
+                    style="height:10px;"
+                    role="progressbar"
+                    [style.width]="getProgreso2"
+                    >
+                    <!-- [style.width]="getPorcentage"-->
+                  </div>
+              </div>
+              </div>
+          </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+           <app-incrementador
+             (valorSalida)="progreso1=$event"
+             [valor]="15"
+           ></app-incrementador>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <app-incrementador
+            (valorSalida)="progreso2=$event"
+            [valor]="15"
+            [btnClass]="'btn-info'"
+          >
+          <!--[btnClass]="'btn btn-info'" :se pone '' para qu le tome como string literal al btn btn-info-->
+          </app-incrementador>
+        </div>
+      </div>
+    </div>
+  </div>
