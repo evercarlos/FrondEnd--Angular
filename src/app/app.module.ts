@@ -7,6 +7,8 @@ import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 
 
+import { NgChartsModule } from 'ng2-charts';
+
 import { AppComponent } from './app.component';
 /*import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';*/
@@ -32,7 +34,8 @@ import { PagesComponent } from './pages/pages/pages.component';*/
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    AuthModule
+    AuthModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
