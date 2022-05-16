@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 
 import { FormsModule } from '@angular/forms';
+import { AccountSettinsComponent } from './account-settins/account-settins.component';
 
 
 
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
+    AccountSettinsComponent,
   ],
   // 
   exports: [// necesito usarlas fuera de otros modulos

@@ -32,6 +32,7 @@ const routes: Routes = [
   ]
  },*/
  /***/
+ { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
  { path: '**', component: NopagefoundComponent},// path no definido
 ];
 
