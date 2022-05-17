@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/services/settings.service';
+
+// llamando a custon.js qu fue definido de menera global, para evitar error de styles al destruir componente (logout)
+declare function customInitFunctions():any;
 
 @Component({
   selector: 'app-pages',
@@ -8,14 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
   
-  public linkTheme = document.querySelector('#theme');
-
-  constructor() { }
+  constructor(private _settionsService: SettingsService) { }
 
   ngOnInit(): void {
-    const theme = localStorage.getItem('theme') || './assets/css/colors/default-dark.css';
-
-    this.linkTheme?.setAttribute('href', theme);
+    customInitFunctions();
   }
 
 }

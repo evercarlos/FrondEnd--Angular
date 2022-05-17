@@ -5,6 +5,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
 
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { RightsidebarComponent } from './rightsidebar/rightsidebar.component';
     RightsidebarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ]
 })
 export class SharedModule { }
