@@ -12,6 +12,8 @@ import { ComponentsModule } from '../components/components.module';
 
 import { FormsModule } from '@angular/forms';
 import { AccountSettinsComponent } from './account-settins/account-settins.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -22,6 +24,8 @@ import { AccountSettinsComponent } from './account-settins/account-settins.compo
     Grafica1Component,
     PagesComponent,
     AccountSettinsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   // 
   exports: [// necesito usarlas fuera de otros modulos
