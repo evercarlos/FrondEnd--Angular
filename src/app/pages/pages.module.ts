@@ -37,9 +37,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
   imports: [
     FormsModule,
     CommonModule,
-    SharedModule,
+    SharedModule, // module1
+    ComponentsModule,// module2
     RouterModule, // para el router-outlet de pages.component.html funcione
-    ComponentsModule,
   ]
 })
 export class PagesModule { }

@@ -23,6 +23,7 @@ import { Grafica1Component } from './pages/grafica1/grafica1.component';
 import { PagesComponent } from './pages/pages/pages.component';*/
 
 @NgModule({
+  // Ya no declaramos otros components porque están declarados en cada ....module.ts
   declarations: [
     AppComponent,
     /**/
