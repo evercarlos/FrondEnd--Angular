@@ -19,6 +19,7 @@ import { ProgressComponent } from './pages/progress/progress.component';*/
 const routes: Routes = [
   // path: '/dashboard' PageRouting
   // path: '/auth' AuthRouting
+  // path: '/medicos' MedicosRouting
   // path: '/compras' ComprasRouting
 
  /*{
