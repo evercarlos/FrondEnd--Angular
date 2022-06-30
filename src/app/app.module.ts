@@ -10,9 +10,9 @@ import { AuthModule } from './auth/auth.module';
 import { NgChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 /*import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';*/
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 /*import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -31,7 +31,7 @@ import { PagesComponent } from './pages/pages/pages.component';*/
     /**/
     /**/
   ],
-  imports: [
+  imports: [ // todos los modulos van en import
     BrowserModule,
     AppRoutingModule,
     PagesModule,
