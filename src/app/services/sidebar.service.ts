@@ -16,6 +16,17 @@ export class SidebarService {
         { titulo: 'Promesas', url: 'promesas' },
         { titulo: 'rxjs', url: 'rxjs' },
       ]
+    },
+    {
+      titulo: 'Seguridad',
+      icono: 'mdi mdi-gauge',
+      submenu: [
+        { titulo: 'Perfil', url: 'profile' },
+        { titulo: 'Tipo Recurso', url: 'type_resource' },
+        { titulo: 'Servicios', url: 'service' },
+        { titulo: 'Contratos', url: 'contract' },
+        { titulo: 'Usuario', url: 'user' },
+      ]
     }
   ];
 

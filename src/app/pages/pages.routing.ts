@@ -20,6 +20,14 @@ const routes: Routes = [
         {path: 'promesas', component: PromesasComponent , data: {titulo: 'Promesas'} },
         {path: 'rxjs', component: RxjsComponent , data: {titulo: 'Rxjs'} },
         //{ path: '',  redirectTo: 'dashboard', pathMatch: 'full' },
+
+        // Seguiridad
+        { path: '', component: DashboardComponent, data: {titulo: 'Seguridad'} },
+        { path: 'profile', component: ProgressComponent , data: {titulo: 'Perfil'} },
+        { path: 'type_resource', component: ProgressComponent , data: {titulo: 'Tipo Recurso'} },
+        { path: 'service', component: ProgressComponent , data: {titulo: 'Servicio'} },
+        { path: 'contract', component: ProgressComponent , data: {titulo: 'Contrato'} },
+        { path: 'user', component: ProgressComponent , data: {titulo: 'Usuario'} },
     ]
   },
 ];
