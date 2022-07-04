@@ -37,6 +37,15 @@ export class UsuarioService {
     console.log(this.usuario);
      return this.usuario?.uid || '';
   }
+
+  get headers() {
+    return {
+      headers: {
+        'x-token': this.token,
+      }
+    }
+  }
+
   //validarToken(){
   validarToken():Observable<boolean> {
     return this.http.get(`${base_url}/login/renew`, {
@@ -97,4 +106,12 @@ export class UsuarioService {
       })
     )
   }
+
+  cargarUsuarios(desde:number = 0) {
+    const url = `${base_url}/usuarios?desde=${desde}`;
+    //return this.http.get(url, this.headers);
+    return this.http.get<{total:number, usuarios: Usuario[]}>(url, this.headers);
+  }
+
+
 }

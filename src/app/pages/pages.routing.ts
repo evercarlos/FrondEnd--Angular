@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
+
 import { AccountSettinsComponent } from './account-settins/account-settins.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
@@ -9,6 +10,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+
+// Mantenimiento
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+
 
 const routes: Routes = [
   {
@@ -31,7 +36,10 @@ const routes: Routes = [
         { path: 'type_resource', component: ProgressComponent , data: {titulo: 'Tipo Recurso'} },
         { path: 'service', component: ProgressComponent , data: {titulo: 'Servicio'} },
         { path: 'contract', component: ProgressComponent , data: {titulo: 'Contrato'} },
-        { path: 'user', component: ProgressComponent , data: {titulo: 'Usuario'} },
+         
+
+        // Mantenimientos
+        { path: 'usuarios', component: UsuariosComponent , data: {titulo: 'Usuarios de Aplicación'} },
     ]
   },
 ];
