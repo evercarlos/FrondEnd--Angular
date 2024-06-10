@@ -10,14 +10,14 @@ export class SidebarService {
       titulo: 'Dashboard',
       icono: 'mdi mdi-gauge',
       submenu: [
-        { titulo: 'Main',url: '/' },
+        /*{ titulo: 'Main',url: '/' },
         { titulo: 'ProgressBar', url: 'progress' },// sin '/' asi pertence a dashboard ruta
         { titulo: 'Gráfica', url: 'grafica1' },
-        { titulo: 'Promesas', url: 'promesas' },
-        { titulo: 'rxjs', url: 'rxjs' },
+        { titulo: 'Promesas', url: 'promesas' },*/
+        { titulo: 'Empresas', url: 'company' },
       ]
     },
-    {
+    /*{
       titulo: 'Mantenimiento',
       icono: 'mdi mdi-folder-lock-open',
       submenu: [
@@ -25,7 +25,7 @@ export class SidebarService {
         { titulo: 'Hospitales', url: 'hospitales' },
         { titulo: 'Médicos', url: 'medicos' },
       ]
-    },
+    },*/
     /*{
       titulo: 'Seguridad',
       icono: 'mdi mdi-gauge',

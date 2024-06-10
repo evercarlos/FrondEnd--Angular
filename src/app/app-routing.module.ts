@@ -4,7 +4,6 @@ import { Router, RouterModule, Routes } from '@angular/router';
 
 //MÓDULOS
 import { PagesRoutingModule } from './pages/pages.routing';
-import { AuthRoutingModule } from './auth/auth.routing';
 
 
 /*import { LoginComponent } from './auth/login/login.component';
@@ -42,7 +41,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),// rutas padres
     PagesRoutingModule,
-    AuthRoutingModule,
   ],
   exports: [ RouterModule ]
 })

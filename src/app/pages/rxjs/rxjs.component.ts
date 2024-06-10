@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Observable, retry, take, map, filter, Subscription } from 'rxjs';
+import { Company } from 'src/app/interfaces/company';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-rxjs',
@@ -8,64 +10,62 @@ import { interval, Observable, retry, take, map, filter, Subscription } from 'rx
   ]
 })
 export class RxjsComponent implements OnInit, OnDestroy {
-
   public intervalSubs?: Subscription; 
+  public items?: Company[];
+  public company:Company = {} as Company;
 
-  constructor() {
-    // retry(): Para intentar una a otra vez despues del error
-    /*this.retornaObservable().pipe(
-      retry() // retry(1)
-    ).subscribe(
-      valor => console.log('subs: ',valor),
-      (err) => console.warn('error: ', err),
-      () => console.info('obs terminado')
-    );*/
-    this.intervalSubs = this.retornaIntervalo()
-    .subscribe(
-      (valor) => console.log(valor)
-    )
-  }
-
-
-  retornaIntervalo():Observable<number> {
-    // take: Cuantas emisiones
-    // map: Altera emisiones
-    // en ese orden map, filter, take
-    // al ser falso el filter ya no pasa el take  si es true
-    // si pasa
-    return interval(500)
-    .pipe(
-      map(valor => valor +1),
-      filter(valor => (valor % 2 === 0)? true: false),
-      //take(10),
-    )
-  }
-
-  retornaObservable():Observable<number> {
-    let i = -1;
-    const obs$ = new Observable<number>(observer => {
-
-     const intervalo  = setInterval(() => {
-        
-        i++;
-        observer.next(i);
-
-        if (i === 4) {
-          clearInterval(intervalo);
-          observer.complete();
-        }
-        if  ( i === 2) {
-          //i  = 0;
-          observer.error('i llego al valor de 2');
-        }
-      }, 1000);
-    });
-    return obs$;
+  constructor(
+    private _companyService: CompanyService
+  ) {
+    
   }
 
 
   ngOnInit(): void {
+    this.start();
   }
+
+  cleanForm = () => {
+    this.company.id = 0;
+    this.company.name= '';
+    this.company.ruc= '';
+    this.company.type = '';
+  }
+  
+
+  start = () => {
+    this._companyService.findAll()
+    .subscribe((resp:any) => {
+        console.log(resp);
+        this.items= resp;
+    })
+  } 
+
+
+  save = () => {
+    this._companyService.save(this.company)
+    .subscribe((resp:any) => {
+      this.cleanForm();
+      this.start();
+    });
+  }
+
+  edit = (item: Company) => {
+    this.cleanForm();
+    this._companyService.find(item.id)
+    .subscribe((resp:any) => {
+      this.company = resp;
+      this.start();
+    });
+  }
+
+  delete = (item: Company) => {
+    this._companyService.delete(item.id)
+    .subscribe((resp:any) => {
+      this.start();
+    });
+  }
+
 
   ngOnDestroy(): void {
     this.intervalSubs?.unsubscribe();

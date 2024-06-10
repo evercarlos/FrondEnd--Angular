@@ -1,1 +1,83 @@
-<p>rxjs works!</p>
+<form class="form-horizontal">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>Ruc</label>
+                <input
+                  name="ruc"
+                  id="ruc"
+                  class="form-control"
+                  [(ngModel)]="company.ruc"
+                >
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input
+                  name="name"
+                  id="name"
+                  class="form-control"
+                  [(ngModel)]="company.name"
+                >
+            </div>
+            <div class="form-group">
+                <label>Tipo</label>
+                <select
+                 class="form-control"
+                 name="type"
+                 [(ngModel)]="company.type"
+                >
+                 <option value="">SELECCIONE::</option>
+                 <option value="SAC">SAC</option>
+                 <option value="EIRL">EIRL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                    (click)="save()"
+                >
+                    Guardar
+                </button>
+            </div>
+        </div>
+        <div class="col-sm 6">
+            <div class="form-group">
+                <table
+                  class="table"
+                >
+                <tr>
+                    <th>RUC</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th></th>
+                </tr>
+                 <tr
+                  *ngFor="let item of items"
+                 >
+                    <td>{{item.ruc}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.type}}</td>
+                    <td>
+                        <a
+                          href="javascript:void(0)"
+                          (click) = edit(item)
+                          class="btn btn-success"
+                        >
+                          Editar
+                        </a>
+                        <a
+                          href="javascript:void(0)"
+                           (click) = delete(item)
+                           class="btn btn-danger"
+                           style="margin-left: 3px;"
+                        >
+                          Eliminar
+                        </a>
+                    </td>
+                 </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>

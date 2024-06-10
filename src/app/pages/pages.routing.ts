@@ -22,12 +22,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],// new
     children: [
         { path: '', component: DashboardComponent, data: {titulo: 'Dashboard'} },
-        { path: 'progress', component: ProgressComponent , data: {titulo: 'Progress'} },
+        /*{ path: 'progress', component: ProgressComponent , data: {titulo: 'Progress'} },
         { path: 'grafica1', component: Grafica1Component, data: {titulo: 'Gráfico'}  },
         { path: 'account-settings', component: AccountSettinsComponent, data: {titulo: 'Ajustes'}  },
-        {path: 'promesas', component: PromesasComponent , data: {titulo: 'Promesas'} },
-        {path: 'rxjs', component: RxjsComponent , data: {titulo: 'Rxjs'} },
-        {path: 'perfil', component: PerfilComponent , data: {titulo: 'Perfil'} },
+        {path: 'promesas', component: PromesasComponent , data: {titulo: 'Promesas'} },*/
+        {path: 'company', component: RxjsComponent , data: {titulo: 'Empresas'} },
+        //{path: 'perfil', component: PerfilComponent , data: {titulo: 'Perfil'} },
         //{ path: '',  redirectTo: 'dashboard', pathMatch: 'full' },
 
         // Seguiridad
